@@ -4,61 +4,64 @@ This file governs Codex work inside `foundation-doc-templates`.
 
 ## Repository Role
 
-`foundation-doc-templates` is a public template repository for 218 Network Foundation documentation. It is not a repository for real records, governance drafts, donor data, program operations, model artifacts, dataset artifacts, incident material, or sealed development.
+`foundation-doc-templates` is a public-safe documentation template library for Foundation-aligned repositories. It provides templates, synthetic examples, review gates, graph standards, and validation checks.
+
+It is not a repository for private Foundation operations, donor records, student data, school private data, private incident reports, raw datasets, model weights, sealed YOSO-YAi LLC IP, customer data, private training corpora, credentials, or unreviewed public claims.
 
 ## Authority
 
-- The 218 Network Foundation owns these public documentation templates.
-- Human Foundation documentation standards authority remains upstream of publication.
-- Codex may draft templates, examples, graphs, and validation checks.
-- Codex is not governance, legal, release, safety, data, or publication authority.
+- The 218 Network Foundation owns these public documentation standards.
+- Human Foundation documentation authority remains upstream of publication.
+- Codex may draft templates, examples, graphs, validation scripts, and documentation.
+- Codex is not governance, release, legal, safety, data, monetization, or publication authority.
 
 ## Entity Boundary Rules
 
 - The Foundation is independent from YOSO-YAi LLC.
-- The Foundation is not a YOSO-YAi marketing arm, CSR project, or product line.
-- YOSOR is a product of YOSO-YAi LLC, not a Foundation product.
-- Company and product references must be boundary context only.
+- The Foundation is not a company marketing arm, CSR project, or product line.
+- YOSOR is a product of YOSO-YAi LLC.
+- Do not use Foundation language to sell company products.
+- Do not use company or product language to define Foundation legitimacy.
 
 ## Public Boundary
 
 Allowed:
 
 - public-safe templates;
-- placeholder examples;
-- generic instructions;
-- graph structures;
-- boundary language;
-- release status vocabulary.
+- clearly synthetic examples;
+- generic boundary language;
+- review checklists;
+- Mermaid graph structure;
+- release status vocabulary;
+- links to public repositories that already exist.
 
 Forbidden:
 
-- real donor records;
+- donor private data;
 - student data;
 - school private data;
 - volunteer private data;
 - private Foundation operations;
-- private board notes;
 - legal drafts or privileged material;
 - private incident records;
-- private partner records;
 - customer data;
 - raw datasets;
-- private telemetry;
 - model weights;
+- private training corpora;
 - private evaluations;
 - sealed YOSO-YAi LLC IP;
 - secrets, tokens, and API keys;
-- security-sensitive NEURONA operational details;
-- unreviewed public claims.
+- exact sensitive infrastructure locations;
+- security-sensitive NEURONA operational details.
 
 ## Writing Rules
 
-- Use precise documentation infrastructure language.
-- Keep placeholders generic and clearly marked.
-- Do not invent real programs, releases, datasets, models, donors, grants, metrics, incidents, audits, or board actions.
-- Use tables where they reduce ambiguity.
-- Update graph and validation files when template requirements change.
+- Write in precise infrastructure-tech language.
+- Mark examples as synthetic or placeholder-based.
+- Keep publication status explicit.
+- Include public/private boundary sections in templates where relevant.
+- Do not claim a model, dataset, Space, school, NEURONA, deployment, or service exists unless the public artifact exists and review status is stated.
+- Do not write final Upwork profile text, active offer copy, pricing, turnaround promises, or client-facing claims.
 
 ## Validation
 

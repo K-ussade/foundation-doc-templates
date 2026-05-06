@@ -8,23 +8,28 @@ required_files=(
   "AGENTS.md"
   "CONTRIBUTING.md"
   "SECURITY.md"
-  "templates/README.md"
-  "templates/AGENTS.md"
-  "templates/governance.md"
-  "templates/transparency-report.md"
-  "templates/release-notes.md"
-  "templates/public-private-boundary.md"
-  "templates/quality-gate.md"
-  "templates/graph.md"
-  "templates/model-card.md"
-  "templates/dataset-card.md"
-  "templates/space-readme.md"
-  "docs/template-guide.md"
-  "docs/public-boundary-rules.md"
-  "docs/versioning-policy.md"
-  "docs/reuse-policy.md"
-  "docs/quality-gate.md"
-  "docs/graphs/documentation-standard-map.md"
+  "CHANGELOG.md"
+  "docs/architecture.md"
+  "docs/template-standard.md"
+  "docs/public-private-boundaries.md"
+  "docs/review-before-publishing.md"
+  "docs/usage-guide.md"
+  "docs/graphs/template-system-map.md"
+  "docs/graphs/document-review-flow.md"
+  "docs/graphs/public-private-boundary-map.md"
+  "docs/graphs/template-to-repo-map.md"
+  "templates/README.template.md"
+  "templates/governance-doc.template.md"
+  "templates/public-report.template.md"
+  "templates/program-page.template.md"
+  "templates/release-notes.template.md"
+  "templates/review-checklist.template.md"
+  "templates/public-private-boundary.template.md"
+  "templates/technical-overview.template.md"
+  "templates/status-table.template.md"
+  "examples/README.md"
+  "examples/public-report-example.md"
+  "examples/program-page-example.md"
   "scripts/validate-doc-templates.sh"
 )
 
@@ -38,7 +43,7 @@ required_graph_sections=(
 
 missing=0
 
-printf "Foundation Document Templates Validation\n"
+printf "Foundation Doc Templates Validation\n"
 printf "Root: %s\n\n" "$ROOT_DIR"
 
 for file in "${required_files[@]}"; do
@@ -65,8 +70,33 @@ for graph in "$ROOT_DIR"/docs/graphs/*.md; do
   done
 done
 
+printf "\nPublic-Safe Example Checks\n"
+
+for example in "$ROOT_DIR"/examples/*.md; do
+  [ -f "$example" ] || continue
+  rel="${example#$ROOT_DIR/}"
+  if grep -Eiq "synthetic|public-safe" "$example"; then
+    printf "PASS  %s is labeled synthetic/public-safe\n" "$rel"
+  else
+    printf "FAIL  %s lacks synthetic/public-safe label\n" "$rel"
+    missing=$((missing + 1))
+  fi
+done
+
+printf "\nBoundary Language Checks\n"
+
+for file in "$ROOT_DIR"/README.md "$ROOT_DIR"/docs/public-private-boundaries.md "$ROOT_DIR"/docs/review-before-publishing.md; do
+  rel="${file#$ROOT_DIR/}"
+  if grep -qF "donor" "$file" && grep -qF "student" "$file" && grep -qF "sealed YOSO-YAi LLC IP" "$file"; then
+    printf "PASS  %s contains required boundary exclusions\n" "$rel"
+  else
+    printf "FAIL  %s missing required boundary exclusions\n" "$rel"
+    missing=$((missing + 1))
+  fi
+done
+
 if [ "$missing" -eq 0 ]; then
-  printf "\nResult: PASS - document templates scaffold is complete.\n"
+  printf "\nResult: PASS - doc template repository is complete.\n"
   exit 0
 fi
 

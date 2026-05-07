@@ -23,7 +23,7 @@ It contains templates, standards, synthetic examples, Mermaid maps, and validati
 
 | Repository | Relationship |
 | --- | --- |
-| [`K-ussade`](https://github.com/K-ussade/K-ussade) | Alexandra Caussade's public GitHub profile and status language. |
+| [`K-ussade`](https://github.com/K-ussade/K-ussade) | K-ussade public GitHub profile and status language stewarded by Alexandra Caussade. |
 | [`foundation-graph-kit`](https://github.com/K-ussade/foundation-graph-kit) | Mermaid graph classes, structure, and public-safe graph rules. |
 | [`foundation-public-roadmap`](https://github.com/K-ussade/foundation-public-roadmap) | Public status ledger for planned, scaffolded, and released Foundation-aligned surfaces. |
 | [`foundation-model-cards`](https://github.com/K-ussade/foundation-model-cards) | Model card and release checklist patterns. |
